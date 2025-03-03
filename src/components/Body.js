@@ -4,17 +4,27 @@ import ShimmerUI from './ShimmerUI';
 
 const Body = () => {
 
-    const [memes, setMeme] = useState(null);
+    const [memes, setMeme] = useState([]);
 
     useEffect(()=>{
         fetchUrl();
+
+        //Logic for infinite scroll
+        window.addEventListener('scroll',handleScroll);
+        return ()=>window.removeEventListener('scroll', handleScroll);
     },[])
+
+    const handleScroll = ()=>{
+      if(window.innerHeight + window.scrollY >= document.body.scrollHeight){
+        fetchUrl();
+      }
+    }
 
     const fetchUrl = async ()=>{
         const data = await fetch('https://meme-api.com/gimme/20');
         const json = await data.json();
         console.log(json);
-        setMeme(json.memes);
+        setMeme((memes)=> [...memes,...json.memes]);
         
     }
   return (
