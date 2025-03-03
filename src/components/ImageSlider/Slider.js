@@ -4,6 +4,16 @@ const Slider = () => {
 
     const [active, setActive] = useState(0);
 
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            handleRightClick();
+        },3000);
+
+        return ()=>{
+            clearInterval(interval);
+        }
+    },[])
+
     const images = [        
         'https://cdn.pixabay.com/photo/2023/12/07/11/04/girl-8435329_1280.png',
         'https://cdn.pixabay.com/photo/2023/12/07/11/11/girl-8435340_1280.png',
