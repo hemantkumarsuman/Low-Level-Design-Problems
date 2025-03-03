@@ -2,6 +2,7 @@ import Body from './components/Body';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from './components/About';
 import Comments from './components/NestedComment/Comments';
+import Slider from './components/ImageSlider/Slider';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <a href="/">Home </a>
           <a href="/about">About </a>
           <a href="/comments">Nested Comments </a>
+          <a href='/slider'>Image Slider</a>
         </nav>        
       </header>
 
@@ -21,6 +23,7 @@ function App() {
           <Route path="/" element={<Body />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/comments" element={<Comments />}></Route>
+          <Route path="/slider" element={<Slider />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
