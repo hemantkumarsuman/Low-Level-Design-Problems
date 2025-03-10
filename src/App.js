@@ -3,18 +3,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from './components/About';
 import Comments from './components/NestedComment/Comments';
 import Slider from './components/ImageSlider/Slider';
+import Pagination from './components/Pagination/Pagination';
 
 
 function App() {
   return (
     <div>
-      <header className="text-2xl font-bold py-5 bg-black text-white text-center flex">
+      <header className="text-2xl font-bold py-5 bg-black text-white text-center flex justify-between">
         Hello World
-        <nav className="px-20 m-2 w-[600px] flex justify-between text-lg">
+        <nav className="px-20 m-2 w-[1000px] flex justify-between text-lg">
           <a href="/">Home </a>
           <a href="/about">About </a>
           <a href="/comments">Nested Comments </a>
           <a href='/slider'>Image Slider</a>
+          <a href='/pagination'>Pagination</a>
         </nav>        
       </header>
 
@@ -24,6 +26,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/comments" element={<Comments />}></Route>
           <Route path="/slider" element={<Slider />}></Route>
+          <Route path="/pagination" element={<Pagination />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
