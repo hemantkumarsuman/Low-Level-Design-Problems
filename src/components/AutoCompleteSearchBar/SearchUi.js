@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 const SearchUi = () => {
     const [searchText,setSearchText] = useState('');
     const [searchResults,SetSearchResults] = useState([]);
+    const [isFocus,setIsFocus] = useState(false);
 
     useEffect(()=>{
         fetchData()
@@ -16,8 +17,13 @@ const SearchUi = () => {
     }
   return (
     <div className='m-4'>
-        <input type='text' className='border border-black p-2 w-96' value={searchText} onChange={(e)=>setSearchText(e.target.value)}/>
-        {searchResults.length>1 && (<ul className='p-2 w-96 border border-black'>
+        <input type='text' className='border border-black p-2 w-96' 
+            value={searchText} 
+            onChange={(e)=>setSearchText(e.target.value)} 
+            onFocus={()=>setIsFocus(true)} 
+            onBlur={()=>setIsFocus(false)}
+        />
+        {searchResults.length>1 && isFocus && (<ul className='p-2 w-96 border border-black'>
             {searchResults.map((result,index)=><li key={result}>{result}</li>)}
             
             
