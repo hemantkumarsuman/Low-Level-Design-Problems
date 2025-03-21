@@ -6,7 +6,13 @@ const SearchUi = () => {
     const [isFocus,setIsFocus] = useState(false);
 
     useEffect(()=>{
-        fetchData()
+
+        const timer = setTimeout(()=>{
+            fetchData()
+        },500)
+
+        return ()=> clearTimeout(timer)
+        
     },[searchText]);
 
     const fetchData = async ()=>{
