@@ -24,7 +24,7 @@ const SearchUi = () => {
             onBlur={()=>setIsFocus(false)}
         />
         {searchResults.length>1 && isFocus && (<ul className='p-2 w-96 border border-black'>
-            {searchResults.map((result,index)=><li key={result}>{result}</li>)}
+            {searchResults.map((result,index)=><li className='cursor-pointer' key={result}>{result}</li>)}
             
             
         </ul>)}
