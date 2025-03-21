@@ -4,6 +4,7 @@ import About from './components/About';
 import Comments from './components/NestedComment/Comments';
 import Slider from './components/ImageSlider/Slider';
 import Pagination from './components/Pagination/Pagination';
+import SearchUi from './components/AutoCompleteSearchBar/SearchUi';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
           <a href="/about">About </a>
           <a href="/comments">Nested Comments </a>
           <a href='/slider'>Image Slider</a>
-          <a href='/pagination'>Pagination</a>
+          <a href='/autocomplete'>AutoComplete-SearchBar</a>
         </nav>        
       </header>
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/comments" element={<Comments />}></Route>
           <Route path="/slider" element={<Slider />}></Route>
           <Route path="/pagination" element={<Pagination />}></Route>
+          <Route path="/autocomplete" element={<SearchUi />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
