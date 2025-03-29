@@ -5,6 +5,7 @@ import Comments from './components/NestedComment/Comments';
 import Slider from './components/ImageSlider/Slider';
 import Pagination from './components/Pagination/Pagination';
 import SearchUi from './components/AutoCompleteSearchBar/SearchUi';
+import InputBox from './components/InputBoxQuestions/InputBox';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <a href="/comments">Nested Comments </a>
           <a href='/slider'>Image Slider</a>
           <a href='/autocomplete'>AutoComplete-SearchBar</a>
+          <a href='/InputBox'>InputBox</a>
         </nav>        
       </header>
 
@@ -29,6 +31,7 @@ function App() {
           <Route path="/slider" element={<Slider />}></Route>
           <Route path="/pagination" element={<Pagination />}></Route>
           <Route path="/autocomplete" element={<SearchUi />}></Route>
+          <Route path="/inputBox" element={<InputBox />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
